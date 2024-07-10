@@ -1,0 +1,36 @@
+<mat-card *ngIf="coinData" class="balance-card">
+  <mat-card-header class="balance-header">
+    <mat-card-title>Total Balance</mat-card-title>
+    <mat-card-subtitle class="money">$50000</mat-card-subtitle>
+    <hr class="hr">
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="exchange-rates">
+      <p><span>Exchange</span></p>
+      <span>1 {{coinData.symbol | uppercase}} = <span class="title"> </span> <span class="value">{{coinData.market_data.current_price.inr | currency: currency}}</span></span>
+    </div>
+  </mat-card-content>
+  <mat-card-content class="balance-exchange">
+    <div class="exchange-form">
+      <div class="exchange-item">
+        <label>You Sell</label>
+        <div class="img-select">
+          <img [src]="coinData.image.small" alt="{{coinData.name}}" width="32" height="32">
+          <span>{{coinData.symbol | uppercase}}</span>
+        </div>
+      </div>
+      <hr class="hr1">
+      <div class="exchange-item">
+        <label>You Get</label>
+        <div class="img-select">
+          <img [src]="coinData.image.small" alt="{{coinData.name}}" width="32" height="32">
+          <span>{{coinData.symbol | uppercase}}</span>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="ok">
+    <button mat-button color="primary" class="btn btn-secondary">Exchange</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,117 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.rewards-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  margin: 0;
+  text-align: left;
+  border-radius: 30px;
+  background: hsl(270, 3%, 13%);
+  height: 90%;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+}
+
+.title {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  text-align: left;
+  margin-right: 10px;
+  margin-bottom: 40px;
+  font-size: 1.8em;
+}
+
+.reward-item {
+  width: 100%;
+  padding: 1px 0;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4px;
+  font-size: 15px;
+}
+
+.reward-item p {
+  margin: 0;
+  color: #695CFE;
+}
+
+.reward-item span {
+  color:#fff;
+  font-size: 12px;
+}
+
+.reward-item input {
+  margin-right: 0px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.container input {
+  display: none;
+}
+
+.container svg {
+  margin-right: 8px;
+}
+
+.path {
+  fill: none;
+  stroke: #695CFE;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+  stroke-dasharray: 241 9999999;
+  stroke-dashoffset: 0;
+}
+
+.container input:checked ~ svg .path {
+  stroke-dasharray: 70.5096664428711 9999999;
+  stroke-dashoffset: -262.2723388671875;
+}
+
+.hr {
+  color: #fff;
+  border: 0.5px solid #fff;
+  margin: 8px 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn{
+  width:100%;
+  border-radius: 20px;
+  border-color: #695CFE;
+  background-color: transparent;
+  color:#695CFE;
+}
+
+@media (max-width: 600px) {
+  .rewards-card {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,29 @@
+<!-- Include Angular Material Card -->
+<span class="title">Rewards</span>
+<mat-card class="rewards-card">
+  <div class="content">
+    <div class="reward-item" *ngFor="let reward of rewards; let i = index">
+      <label class="container">
+        <input type="checkbox" [(ngModel)]="reward.checked">
+        <svg viewBox="0 0 64 64" height="1.3em" width="1.3em">
+          <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+        </svg>
+        <div class="description-container">
+          <p>
+            <a href="#" (click)="checkReward(i, $event)">{{ reward.description }}</a>
+          </p>
+          <span>{{ reward.bonus }}</span>
+        </div>
+      </label>
+      <hr class="hr">
+      <ng-container *ngIf="reward.checked">
+        <app-refer *ngIf="i === 0"></app-refer>
+        <app-buy-page *ngIf="i === 1 || i === 2"></app-buy-page>
+      </ng-container>
+    </div>
+  </div>
+  <div class="btn">
+    <button  (click)="handleButtonClick()"  [disabled]="!allChecked()" mat-button color="primary" class="btn btn-secondary">Exchange</button>
+  </div>
+</mat-card>
+
